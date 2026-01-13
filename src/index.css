@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent;
+}
+
+.btn-gradient {
+  @apply bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white;
+}
+
+/* Custom Scrollbar - Swiggy Style */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 6px;
+  border: 2px solid #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999999;
+}
+
+/* Scrollbar up/down buttons */
+::-webkit-scrollbar-button {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: #e8e8e8;
+  border: 1px solid #d0d0d0;
+}
+
+::-webkit-scrollbar-button:single-button {
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-button:single-button:hover {
+  background-color: #cccccc;
+}
+
+::-webkit-scrollbar-button:single-button:active {
+  background-color: #999999;
+}
+
+/* Firefox scrollbar support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cccccc #f5f5f5;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #1e293b 0%, #581c87 50%, #0f172a 100%);
+  color: #e5e7eb;
+}
+
+/* Utility classes */
+.glass-effect {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ea580c, #dc2626, #be185d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #ea580c, #dc2626);
+  box-shadow: 0 0 20px rgba(234, 88, 12, 0.4);
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #f97316, #ef4444);
+  box-shadow: 0 0 30px rgba(234, 88, 12, 0.6);
+}
+
+/* Smooth transitions */
+button, a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Shadow utilities */
+.shadow-orange {
+  box-shadow: 0 10px 30px rgba(234, 88, 12, 0.3);
+}
+
+.shadow-orange-lg {
+  box-shadow: 0 20px 50px rgba(234, 88, 12, 0.4);
+}
+
+/* Hide scrollbar while keeping functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Custom scrollbar for city list */
+.city-list-scroll {
+  -ms-overflow-style: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #10b981 #f3f4f6;
+}
+
+.city-list-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.city-list-scroll::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+
+.city-list-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #10b981, #059669);
+  border-radius: 10px;
+  border: 2px solid #f3f4f6;
+}
+
+.city-list-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #059669, #047857);
+}
+
