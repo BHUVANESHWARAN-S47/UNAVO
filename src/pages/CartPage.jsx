@@ -88,7 +88,16 @@ const CartPage = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => navigate('/')}
+              onClick={() => {
+                navigate('/');
+                setTimeout(() => {
+                  const element = document.querySelector('h2');
+                  const inspirationSection = Array.from(document.querySelectorAll('h2')).find(el => el.textContent === 'Inspiration for your first order');
+                  if (inspirationSection) {
+                    inspirationSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }, 100);
+              }}
               className="px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-semibold"
             >
               Continue Shopping
@@ -284,7 +293,15 @@ const CartPage = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => navigate('/')}
+                onClick={() => {
+                  navigate('/');
+                  setTimeout(() => {
+                    const inspirationSection = Array.from(document.querySelectorAll('h2')).find(el => el.textContent === 'Inspiration for your first order');
+                    if (inspirationSection) {
+                      inspirationSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }, 100);
+                }}
                 className="w-full mt-4 py-3 border-2 border-green-500 text-green-600 rounded-lg font-semibold transition-all"
               >
                 Continue Shopping
