@@ -62,6 +62,7 @@ const HomePage = () => {
                     <option>Delhi</option>
                     <option>Bangalore</option>
                     <option>Hyderabad</option>
+                    <option>Tamil Nadu</option>
                   </select>
                 </div>
                 
