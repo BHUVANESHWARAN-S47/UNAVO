@@ -136,7 +136,7 @@ const RestaurantDashboardPage = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 min-h-screen">
+    <div className="bg-gradient-to-br from-indigo-950 via-purple-900 to-pink-950 min-h-screen">
       <Navbar />
 
       <div className="pt-20 pb-10 px-4">
@@ -151,18 +151,18 @@ const RestaurantDashboardPage = () => {
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-6 rounded-lg">
-                <p className="text-3xl font-bold">₹{stats.totalSurplusSaved.toFixed(0)}</p>
-                <p className="text-sm">Revenue from Surplus Sales</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-gradient-to-br from-amber-500 via-orange-500 to-rose-500 text-white p-8 rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <p className="text-4xl font-bold mb-2">₹{stats.totalSurplusSaved.toFixed(0)}</p>
+                <p className="text-sm font-semibold">Revenue from Surplus Sales</p>
               </div>
-              <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white p-6 rounded-lg">
-                <p className="text-3xl font-bold">{stats.totalDonations}</p>
-                <p className="text-sm">Total Donations Made</p>
+              <div className="bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 text-white p-8 rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <p className="text-4xl font-bold mb-2">{stats.totalDonations}</p>
+                <p className="text-sm font-semibold">Total Donations Made</p>
               </div>
-              <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg">
-                <p className="text-3xl font-bold">₹{stats.totalDonationValue}</p>
-                <p className="text-sm">Est. Tax Deduction Value</p>
+              <div className="bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 text-white p-8 rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                <p className="text-4xl font-bold mb-2">₹{stats.totalDonationValue}</p>
+                <p className="text-sm font-semibold">Est. Tax Deduction Value</p>
               </div>
             </div>
           </div>
@@ -171,30 +171,30 @@ const RestaurantDashboardPage = () => {
           <div className="flex gap-4 mb-8 justify-center flex-wrap">
             <button
               onClick={() => setActiveTab('surplus')}
-              className={`px-6 py-3 rounded-lg font-bold transition ${
+              className={`px-8 py-4 rounded-xl font-bold transition-all duration-300 ${
                 activeTab === 'surplus'
-                  ? 'bg-orange-500 text-white'
-                  : 'bg-slate-700 text-gray-300 hover:bg-slate-600'
+                  ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg shadow-orange-500/50 scale-105'
+                  : 'bg-white/10 backdrop-blur-md text-gray-200 hover:bg-white/20'
               }`}
             >
               🍔 Surplus Listings
             </button>
             <button
               onClick={() => setActiveTab('donations')}
-              className={`px-6 py-3 rounded-lg font-bold transition ${
+              className={`px-8 py-4 rounded-xl font-bold transition-all duration-300 ${
                 activeTab === 'donations'
-                  ? 'bg-green-500 text-white'
-                  : 'bg-slate-700 text-gray-300 hover:bg-slate-600'
+                  ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/50 scale-105'
+                  : 'bg-white/10 backdrop-blur-md text-gray-200 hover:bg-white/20'
               }`}
             >
               🤝 Donations
             </button>
             <button
               onClick={() => setActiveTab('analytics')}
-              className={`px-6 py-3 rounded-lg font-bold transition ${
+              className={`px-8 py-4 rounded-xl font-bold transition-all duration-300 ${
                 activeTab === 'analytics'
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-slate-700 text-gray-300 hover:bg-slate-600'
+                  ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/50 scale-105'
+                  : 'bg-white/10 backdrop-blur-md text-gray-200 hover:bg-white/20'
               }`}
             >
               📊 Analytics
@@ -205,13 +205,13 @@ const RestaurantDashboardPage = () => {
           {activeTab === 'surplus' && (
             <div className="space-y-8">
               {/* Create New Listing */}
-              <div className="bg-slate-800 rounded-xl p-8">
+              <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-white/10">
                 <h2 className="text-3xl font-bold text-white mb-6">Create Surplus Listing</h2>
 
                 {/* Food Items */}
                 <div className="space-y-4 mb-6">
                   {newSurplus.foodItems.map((item, index) => (
-                    <div key={index} className="bg-slate-700 p-6 rounded-lg">
+                    <div key={index} className="bg-gradient-to-br from-slate-700/90 to-slate-800/90 p-6 rounded-xl border border-orange-500/20 shadow-lg">
                       <h3 className="text-white font-bold mb-4">Food Item {index + 1}</h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         <div>
@@ -305,7 +305,7 @@ const RestaurantDashboardPage = () => {
               </div>
 
               {/* Active Listings */}
-              <div className="bg-slate-800 rounded-xl p-8">
+              <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-white/10">
                 <h2 className="text-3xl font-bold text-white mb-6">Active Listings ({myListings.length})</h2>
 
                 {myListings.length === 0 ? (
@@ -313,7 +313,7 @@ const RestaurantDashboardPage = () => {
                 ) : (
                   <div className="space-y-4">
                     {myListings.map((listing) => (
-                      <div key={listing.id} className="bg-slate-700 p-4 rounded-lg">
+                      <div key={listing.id} className="bg-gradient-to-br from-slate-700/90 to-slate-800/90 p-6 rounded-xl border border-orange-400/30 shadow-lg hover:shadow-xl transition-shadow">
                         <div className="flex justify-between items-start mb-3">
                           <div>
                             <h3 className="text-white font-bold text-lg">
@@ -356,11 +356,11 @@ const RestaurantDashboardPage = () => {
           {activeTab === 'donations' && (
             <div className="space-y-8">
               {/* Smart Charity Matching */}
-              <div className="bg-slate-800 rounded-xl p-8">
+              <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-white/10">
                 <h2 className="text-3xl font-bold text-white mb-6">Smart Charity Matching</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   {matchCharitiesForFood(['cooked', 'packaged'], restaurantLocation).slice(0, 3).map((charity) => (
-                    <div key={charity.id} className="bg-slate-700 p-4 rounded-lg border-2 border-green-500/50">
+                    <div key={charity.id} className="bg-gradient-to-br from-emerald-900/50 to-teal-900/50 p-6 rounded-xl border-2 border-emerald-400/60 shadow-lg hover:shadow-emerald-500/50 transition-all hover:scale-105">
                       <h3 className="text-white font-bold mb-2">{charity.name}</h3>
                       <p className="text-gray-300 text-sm mb-3">📍 {charity.distance.toFixed(1)} km away</p>
                       <p className="text-yellow-400 mb-3">⭐ {charity.rating}/5</p>
@@ -381,7 +381,7 @@ const RestaurantDashboardPage = () => {
               </div>
 
               {/* My Donations */}
-              <div className="bg-slate-800 rounded-xl p-8">
+              <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-white/10">
                 <h2 className="text-3xl font-bold text-white mb-6">My Donations ({myDonations.length})</h2>
 
                 {myDonations.length === 0 ? (
@@ -389,7 +389,7 @@ const RestaurantDashboardPage = () => {
                 ) : (
                   <div className="space-y-4">
                     {myDonations.map((donation) => (
-                      <div key={donation.id} className="bg-slate-700 p-4 rounded-lg">
+                      <div key={donation.id} className="bg-gradient-to-br from-slate-700/90 to-slate-800/90 p-6 rounded-xl border border-green-400/30 shadow-lg hover:shadow-xl transition-shadow">
                         <div className="flex justify-between items-start mb-3">
                           <div>
                             <h3 className="text-white font-bold text-lg">{donation.charityName}</h3>
@@ -421,12 +421,12 @@ const RestaurantDashboardPage = () => {
 
           {/* Analytics Tab */}
           {activeTab === 'analytics' && (
-            <div className="bg-slate-800 rounded-xl p-8">
+            <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-white/10">
               <h2 className="text-3xl font-bold text-white mb-8">Performance Analytics</h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Surplus Marketplace Stats */}
-                <div className="bg-slate-700 rounded-lg p-6">
+                <div className="bg-gradient-to-br from-orange-900/40 to-red-900/40 rounded-xl p-6 border border-orange-500/40 shadow-lg">
                   <h3 className="text-xl font-bold text-white mb-6">📊 Surplus Marketplace</h3>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center pb-3 border-b border-slate-600">
@@ -456,7 +456,7 @@ const RestaurantDashboardPage = () => {
                 </div>
 
                 {/* Food Donation Stats */}
-                <div className="bg-slate-700 rounded-lg p-6">
+                <div className="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 rounded-xl p-6 border border-emerald-500/40 shadow-lg">
                   <h3 className="text-xl font-bold text-white mb-6">🤝 Food Donation</h3>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center pb-3 border-b border-slate-600">
@@ -480,7 +480,7 @@ const RestaurantDashboardPage = () => {
               </div>
 
               {/* Impact Summary */}
-              <div className="mt-8 bg-gradient-to-r from-green-600/20 to-blue-600/20 border-l-4 border-green-500 p-6 rounded-lg">
+              <div className="mt-8 bg-gradient-to-r from-emerald-600/30 to-cyan-600/30 border-l-4 border-emerald-400 p-6 rounded-xl shadow-lg backdrop-blur-sm">
                 <h3 className="text-white font-bold mb-3">🌍 Your Impact</h3>
                 <p className="text-gray-300 mb-4">
                   By using UNAVO's surplus marketplace and donation network, you are:
