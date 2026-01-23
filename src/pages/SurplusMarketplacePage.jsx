@@ -67,45 +67,45 @@ const SurplusMarketplacePage = () => {
   );
 
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen">
+    <div className="bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 min-h-screen">
       <Navbar />
       
       <div className="pt-20 pb-10 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-white mb-4">
+            <h1 className="text-5xl font-bold text-gray-800 mb-4">
               🎉 Surplus Marketplace
             </h1>
-            <p className="text-xl text-purple-200 mb-8">
+            <p className="text-xl text-gray-600 mb-8">
               Save up to 80% on delicious food from nearby restaurants in their final hours before closing!
             </p>
-            <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-xl inline-block">
-              <p className="text-lg">💰 Total Savings: ₹{totalSavings.toFixed(2)}</p>
+            <div className="bg-gradient-to-r from-orange-400 to-amber-400 text-white p-6 rounded-xl inline-block shadow-lg">
+              <p className="text-lg font-bold">💰 Total Savings: ₹{totalSavings.toFixed(2)}</p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
             {/* Sidebar */}
             <div className="lg:col-span-1">
-              <div className="bg-slate-800 rounded-xl p-6 sticky top-24">
-                <h2 className="text-2xl font-bold text-white mb-6">Filters</h2>
+              <div className="bg-white rounded-2xl p-6 sticky top-24 shadow-lg border border-gray-200">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">Filters</h2>
 
                 {/* Search */}
                 <div className="mb-6">
-                  <label className="text-white font-semibold mb-2 block">Search Food</label>
+                  <label className="text-gray-700 font-semibold mb-2 block">Search Food</label>
                   <input
                     type="text"
                     placeholder="Search for food..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full px-4 py-2 rounded-lg bg-slate-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent"
                   />
                 </div>
 
                 {/* Radius Filter */}
                 <div className="mb-6">
-                  <label className="text-white font-semibold mb-3 block">
+                  <label className="text-gray-700 font-semibold mb-3 block">
                     Distance Radius: {selectedRadius} km
                   </label>
                   <input
@@ -114,16 +114,16 @@ const SurplusMarketplacePage = () => {
                     max="20"
                     value={selectedRadius}
                     onChange={(e) => setSelectedRadius(parseInt(e.target.value))}
-                    className="w-full accent-purple-500"
+                    className="w-full accent-orange-500"
                   />
                 </div>
 
                 {/* Quick Stats */}
-                <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg p-4">
-                  <p className="text-white text-sm font-semibold mb-2">
+                <div className="bg-gradient-to-br from-orange-100 to-amber-100 border border-orange-200 rounded-xl p-4">
+                  <p className="text-gray-800 text-sm font-semibold mb-2">
                     📍 Active Listings: {filteredListings.length}
                   </p>
-                  <p className="text-white text-sm">
+                  <p className="text-gray-800 text-sm">
                     🛒 Cart Items: {cartItems.length}
                   </p>
                 </div>
@@ -135,23 +135,23 @@ const SurplusMarketplacePage = () => {
               {/* Listings */}
               <div className="space-y-6">
                 {filteredListings.length === 0 ? (
-                  <div className="bg-slate-800 rounded-xl p-12 text-center">
-                    <p className="text-white text-lg">No surplus food available in your area.</p>
-                    <p className="text-purple-300 mt-2">Try increasing the search radius.</p>
+                  <div className="bg-white rounded-2xl p-12 text-center shadow-lg border border-gray-200">
+                    <p className="text-gray-800 text-lg font-semibold">No surplus food available in your area.</p>
+                    <p className="text-gray-600 mt-2">Try increasing the search radius.</p>
                   </div>
                 ) : (
                   filteredListings.map((listing) => (
-                    <div key={listing.id} className="bg-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-purple-500/50 transition">
+                    <div key={listing.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition border border-gray-200">
                       <div className="p-6">
-                        <h3 className="text-2xl font-bold text-white mb-4">
+                        <h3 className="text-2xl font-bold text-gray-800 mb-4">
                           🍽️ {listing.restaurantName}
                         </h3>
 
                         {/* Food Items Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           {listing.foodItems.map((item) => (
-                            <div key={item.id} className="bg-slate-700 rounded-lg overflow-hidden hover:transform hover:scale-105 transition">
-                              <div className="h-48 bg-gradient-to-br from-orange-400 to-pink-500 relative overflow-hidden">
+                            <div key={item.id} className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl overflow-hidden hover:transform hover:scale-105 transition border border-orange-200 shadow">
+                              <div className="h-48 bg-gradient-to-br from-orange-300 to-amber-300 relative overflow-hidden">
                                 <img
                                   src={item.image}
                                   alt={item.name}
@@ -160,27 +160,27 @@ const SurplusMarketplacePage = () => {
                                     e.target.src = `https://via.placeholder.com/300?text=${item.name}`;
                                   }}
                                 />
-                                <div className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                                <div className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
                                   -{item.discount}%
                                 </div>
-                                <div className="absolute bottom-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs">
+                                <div className="absolute bottom-2 left-2 bg-emerald-500 text-white px-2 py-1 rounded text-xs font-semibold shadow">
                                   ⏰ Expires in {Math.round((item.expiresAt - new Date()) / 60000)} mins
                                 </div>
                               </div>
 
                               <div className="p-4">
-                                <h4 className="text-lg font-bold text-white mb-2">{item.name}</h4>
-                                <p className="text-gray-300 text-sm mb-3">{item.description}</p>
-                                <p className="text-gray-400 text-sm mb-3">Available: {item.quantity} units</p>
+                                <h4 className="text-lg font-bold text-gray-800 mb-2">{item.name}</h4>
+                                <p className="text-gray-600 text-sm mb-3">{item.description}</p>
+                                <p className="text-gray-500 text-sm mb-3">Available: {item.quantity} units</p>
 
                                 {/* Price Section */}
                                 <div className="flex items-center justify-between mb-4">
                                   <div>
                                     <p className="text-gray-400 line-through text-sm">₹{item.originalPrice}</p>
-                                    <p className="text-2xl font-bold text-green-400">₹{item.discountedPrice}</p>
+                                    <p className="text-2xl font-bold text-emerald-600">₹{item.discountedPrice}</p>
                                   </div>
                                   <div className="text-right">
-                                    <p className="text-green-400 font-bold text-lg">
+                                    <p className="text-emerald-600 font-bold text-lg">
                                       Save ₹{(item.originalPrice - item.discountedPrice)}
                                     </p>
                                   </div>
@@ -189,12 +189,12 @@ const SurplusMarketplacePage = () => {
                                 {item.quantity > 0 ? (
                                   <button
                                     onClick={() => handleAddToCart(listing, item)}
-                                    className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-2 rounded-lg hover:shadow-lg transform hover:scale-105 transition"
+                                    className="w-full bg-gradient-to-r from-orange-400 to-amber-400 text-white font-bold py-2 rounded-lg hover:shadow-lg hover:from-orange-500 hover:to-amber-500 transition"
                                   >
                                     Add to Cart
                                   </button>
                                 ) : (
-                                  <button disabled className="w-full bg-gray-600 text-white font-bold py-2 rounded-lg cursor-not-allowed opacity-50">
+                                  <button disabled className="w-full bg-gray-300 text-gray-500 font-bold py-2 rounded-lg cursor-not-allowed">
                                     Out of Stock
                                   </button>
                                 )}
@@ -212,15 +212,15 @@ const SurplusMarketplacePage = () => {
 
           {/* Cart Section */}
           {cartItems.length > 0 && (
-            <div className="mt-12 bg-slate-800 rounded-xl p-8">
-              <h2 className="text-3xl font-bold text-white mb-6">Your Cart</h2>
+            <div className="mt-12 bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">Your Cart</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {cartItems.map((cartItem) => (
-                  <div key={cartItem.id} className="bg-slate-700 rounded-lg p-4 flex justify-between items-center">
+                  <div key={cartItem.id} className="bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200 rounded-xl p-4 flex justify-between items-center shadow">
                     <div>
-                      <p className="text-white font-bold">{cartItem.name}</p>
-                      <p className="text-gray-400 text-sm">{cartItem.restaurantName}</p>
-                      <p className="text-green-400 font-bold">₹{cartItem.discountedPrice}</p>
+                      <p className="text-gray-800 font-bold">{cartItem.name}</p>
+                      <p className="text-gray-600 text-sm">{cartItem.restaurantName}</p>
+                      <p className="text-emerald-600 font-bold">₹{cartItem.discountedPrice}</p>
                     </div>
                     <button
                       onClick={() => handleRemoveFromCart(cartItem.id)}
@@ -231,7 +231,7 @@ const SurplusMarketplacePage = () => {
                   </div>
                 ))}
               </div>
-              <div className="mt-6 p-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg">
+              <div className="mt-6 p-4 bg-gradient-to-r from-orange-400 to-amber-400 rounded-xl shadow-lg">
                 <p className="text-white text-lg font-bold">
                   Total Savings: ₹{totalSavings.toFixed(2)} 💰
                 </p>
